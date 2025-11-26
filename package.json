@@ -1,0 +1,15 @@
+{
+  "name": "webasha",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "start": "concurrently \"npm run dev --prefix Frontend\" \"npm run dev --prefix Node-Backend\""
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",    
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
