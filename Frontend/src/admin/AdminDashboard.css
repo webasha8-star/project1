@@ -1,0 +1,105 @@
+/* Base Page */
+.admin-dashboard {
+  background-color: #0f1115;
+  color: white;
+  min-height: 100vh;
+  padding: 40px 24px;
+  font-family: "Arial", sans-serif;
+}
+
+/* Header */
+.admin-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.admin-title {
+  color: #22c55e;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.admin-subtitle {
+  color: #9ca3af;
+  margin-top: 10px;
+}
+
+/* Loading */
+.admin-loading {
+  text-align: center;
+  padding: 50px;
+  color: #aaa;
+  font-size: 1.2rem;
+}
+
+/* Stat Cards */
+.admin-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.admin-card {
+  background-color: #1f2937;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.admin-card:hover {
+  background-color: #172135;
+}
+
+.admin-card-title {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.admin-card-value {
+  color: #22c55e;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Charts Section */
+.admin-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+  margin-bottom: 50px;
+}
+
+.admin-chart-box {
+  background-color: #1f2937;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.admin-chart-title {
+  font-size: 18px;
+  color: #d1d5db;
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.admin-chart-center {
+  width: 240px;
+  margin: 0 auto;
+}
+
+.admin-chart-box canvas {
+  height: 250px !important;
+}
+
+.admin-chart-grid {
+  gap: 24px;
+  margin-bottom: 40px;
+}

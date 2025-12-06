@@ -1,0 +1,155 @@
+// ======================================================
+// Prisma Schema for Webasha Backend
+// Learn more: https://pris.ly/d/prisma-schema
+// ======================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// USER MODEL
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String
+  email     String   @unique
+  password  String
+  role      Role     @default(USER) // Default role is USER (enum-safe)
+  image     String?
+  country   String?  // Added — stores country code like "IN", "US", "DE"
+  createdAt DateTime @default(now())
+
+  // Relations
+  submissions       Submission[]
+  announcements     Announcement[]
+  UserAnnouncement  UserAnnouncement[]
+}
+
+// LAB MODEL
+model Lab {
+  id           Int      @id @default(autoincrement())
+  title        String
+  summary      String?
+  image        String?
+  modules      Module[]
+  createdAt    DateTime @default(now())
+  displayOrder Int      @default(0)
+}
+
+// MODULE MODEL
+model Module {
+  id        Int      @id @default(autoincrement())
+  title     String
+  labId     Int
+  createdAt DateTime @default(now())
+
+  // Relations
+  lab       Lab        @relation(fields: [labId], references: [id], onDelete: Cascade)
+  questions Question[]
+}
+
+// QUESTION MODEL
+model Question {
+  id        Int      @id @default(autoincrement())
+  text      String
+  options   Json
+  answer    String
+  moduleId  Int
+  createdAt DateTime @default(now())
+
+  // Relations
+  module      Module       @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  submissions Submission[]
+}
+
+// SUBMISSION MODEL
+model Submission {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  questionId Int
+  selected   String
+  status     String   @default("PENDING")
+  createdAt  DateTime @default(now())
+
+  // Relations
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+}
+
+// ROLE ENUM
+enum Role {
+  USER
+  ADMIN
+}
+
+// ANNOUNCEMENT MODEL
+
+model Announcement {
+  id        Int      @id @default(autoincrement())
+  message   String
+  createdAt DateTime @default(now())
+
+  // Relations
+  userAnnouncements UserAnnouncement[]
+  User              User?              @relation(fields: [userId], references: [id])
+  userId            Int?
+}
+
+model UserAnnouncement {
+  id             Int      @id @default(autoincrement())
+  userId         Int
+  announcementId Int
+  isRead         Boolean  @default(false)
+  createdAt      DateTime @default(now())
+
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  announcement Announcement @relation(fields: [announcementId], references: [id], onDelete: Cascade)
+}
+
+// CONTACT MODEL
+
+model Contact {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+// FAQQuestion MODEL
+
+model FAQQuestion {
+  id        Int      @id @default(autoincrement())
+  email     String
+  question  String
+  reply     String?      // Admin reply (optional)
+  status    String       @default("pending") // "pending" or "replied"
+  createdAt DateTime     @default(now())
+}
+
+// Challenge MODEL
+
+model Challenge {
+id Int @id @default(autoincrement())
+title String
+desc String
+level String // "easy", "intermediate", or "hard"
+img String?
+createdAt DateTime @default(now())
+updatedAt DateTime @updatedAt
+}
+
+model Testimonial {
+  id        Int      @id @default(autoincrement())
+  name      String
+  role      String
+  message   String
+  rating    Int
+  createdAt DateTime @default(now())
+}
+

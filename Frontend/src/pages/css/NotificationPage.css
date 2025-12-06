@@ -1,0 +1,195 @@
+/* ==============================================
+   Notification Page Styling (Alignment Improved)
+   ============================================== */
+.notification-page {
+  padding: 80px 20px 50px; /* Adjusted to sit just below header */
+  max-width: 900px;
+  margin: 120px auto;
+  background: #0f172a;
+  color: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* --- Fix the title alignment and spacing --- */
+.notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 10px;
+}
+
+/* Title centered and slightly lower from header */
+.notification-page h2 {
+  text-align: left;
+  color: #22c55e;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ----------------------------------------------
+   Button Styling
+   ---------------------------------------------- */
+.mark-read-btn {
+  background-color: #22c55e;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.mark-read-btn:hover {
+  background-color: #16a34a;
+}
+
+/* ----------------------------------------------
+   Empty or Loading Message
+   ---------------------------------------------- */
+.no-notifications {
+  text-align: center;
+  color: #94a3b8;
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+/* ----------------------------------------------
+   Notification List & Items
+   ---------------------------------------------- */
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-item {
+  background-color: #1e293b;
+  padding: 15px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.notification-item.unread {
+  background-color: #1a2e1a;
+  border-left: 4px solid #22c55e;
+}
+
+.notification-item:hover {
+  background-color: #273548;
+}
+
+.notification-message {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.notification-time {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-top: 5px;
+}
+
+/* ----------------------------------------------
+   Delete Button
+   ---------------------------------------------- */
+.delete-notification-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.delete-notification-btn:hover {
+  background: #dc2626;
+}
+
+/* ----------------------------------------------
+   Meta Section Alignment
+   ---------------------------------------------- */
+.notification-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* ----------------------------------------------
+   Responsive Design
+   ---------------------------------------------- */
+@media (max-width: 1024px) {
+  .notification-page {
+    max-width: 90%;
+    padding: 110px 15px 50px;
+  }
+
+  .notification-page h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .notification-page {
+    padding: 100px 15px 40px;
+  }
+
+  .notification-page h2 {
+    font-size: 24px;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .notification-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mark-read-btn {
+    width: 100%;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notification-page {
+    padding: 90px 12px 35px;
+  }
+
+  .notification-page h2 {
+    font-size: 22px;
+  }
+
+  .notification-item {
+    padding: 10px;
+  }
+
+  .notification-message {
+    font-size: 14px;
+  }
+
+  .notification-time {
+    font-size: 11px;
+  }
+}

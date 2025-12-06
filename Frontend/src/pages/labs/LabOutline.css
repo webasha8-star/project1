@@ -1,0 +1,277 @@
+.lab-outline-container {
+  display: flex;
+  min-height: 100vh;
+  background: #181c2a;
+  padding-top: 0; /* changed from 80px to 0 to avoid gap above header */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sidebar */
+.lab-outline-sidebar {
+  width: 260px;
+  background: #1f1f2e;
+  color: #f0f0f0;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  border-right: 1px solid #333;
+}
+
+.lab-outline-sidebar h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.lab-outline-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lab-outline-sidebar li {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.2s;
+  border-radius: 6px;
+}
+
+.lab-outline-sidebar li a {
+  color: #cccccc;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.lab-outline-sidebar li a:hover {
+  background: #2c2c44;
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.lab-outline-sidebar li.completed a {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.lab-outline-sidebar li.completed a .checkmark {
+  color: #4caf50;
+  margin-left: 6px;
+}
+
+/* --- Update for Lab 1 submenu scrollability and visibility --- */
+.lab1-submenu {
+  list-style: decimal inside;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #181c2a;
+  border-radius: 6px;
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 100;
+  max-height: 70vh;
+  overflow-y: auto;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+.lab1-submenu li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.lab1-submenu a {
+  display: inline-block;
+  padding: 0.5rem 0.5rem;
+  color: #0A1931 !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  width: 100%;
+  font-weight: bold;
+}
+.lab1-submenu a:hover {
+  background: #0FA30F;
+  color: #fff;
+}
+
+.lab-outline-sidebar {
+  overflow: visible !important;
+}
+
+/* Main Content */
+.lab-outline-main {
+  flex: 1;
+  padding: 2rem;
+  margin: 0 2rem;
+  background: #fff;
+  color: #181c2a;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  min-height: 400px;
+}
+
+/* Progress */
+.progress-bar {
+  background: #333;
+  border-radius: 8px;
+  height: 16px;
+  margin-top: 2rem;
+  width: 100%;
+  overflow: hidden;
+}
+.progress {
+  background: #4caf50;
+  height: 100%;
+  transition: width 0.3s;
+}
+
+/* Module Cards */
+.module-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.module-card {
+  background: #22223b;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+.module-card:hover {
+  transform: translateY(-5px);
+}
+.module-card h3 {
+  color: #fff;
+  margin-top: 0;
+}
+.module-card p {
+  color: #bbb;
+}
+
+.module-link {
+  margin-top: 1rem;
+  background: #4caf50;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.module-link:hover {
+  background: #45a049;
+}
+
+/* Scrollbar Styling (optional) */
+.lab-outline-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.lab-outline-sidebar::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 3px;
+}
+
+.lab2-outer-container {
+  background: #181c2a;
+  min-height: 100vh;
+  padding-top: 80px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.lab2-inner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.lab2-info-section {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.lab2-main-layout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 500px;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.gt-shop-card-item {
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.gt-shop-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.gt-shop-content {
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.gt-shop-content h5 {
+  min-height: 2.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 2; */
+  -webkit-box-orient: vertical;
+}
+
+/* Remove margin-top that could cause a line above header */
+.lab-outline-container,
+.lab2-outer-container {
+  margin-top: 0px;
+}
+
+.lab-nav-btn {
+  background: #39FF14;
+  color: #232d3f;
+  padding: 12px 32px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 8px rgba(39, 255, 39, 0.08);
+}
+
+.lab-nav-btn:hover {
+  background: #000000;
+  color: #ffffff;
+}

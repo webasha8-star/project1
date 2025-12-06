@@ -1,0 +1,339 @@
+.testimonial-section {
+  padding: 130px 20px 60px;
+  background-color: #0a0e12;
+  min-height: 100vh;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-heading {
+  color: #00ff00;
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 800;
+  text-transform: none;
+  text-align: center;
+}
+
+.testimonial-grid-two {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: linear-gradient(135deg, #141a1f 0%, #1a2a2f 100%);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 0 16px rgba(0, 255, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 330px; /* ✅ Ensures same height for all */
+  overflow: hidden;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  object-fit: cover;
+  border: 2px solid #00ff00;
+}
+
+.testimonial-rating {
+  color: #00ff00;
+  margin-bottom: 8px;
+}
+
+.star {
+  font-size: 16px;
+  margin-right: 4px;
+}
+.testimonial-feedback {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #f1f1f1;
+  text-transform: none;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  max-height: 120px; /* ✅ prevents overflow */
+  overflow: hidden;
+}
+
+
+.testimonial-toggle {
+  background: none;
+  border: none;
+  color: #00ff00;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.testimonial-toggle:hover {
+  color: #00cc00;
+}
+
+.testimonial-user {
+  margin-top: auto;
+  border-top: 1px solid #1e242b;
+  padding-top: 16px;
+}
+
+.testimonial-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 4px;
+  text-transform: none;
+}
+
+.testimonial-role {
+  font-size: 14px;
+  color: #bbbbbb;
+  font-style: italic;
+  text-transform: none;
+}
+
+.testimonial-cta {
+  display: inline-block;
+  background-color: #00ff00;
+  color: #0a0e12;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-transform: none;
+  text-decoration: none;
+  margin-top: 40px;
+  transition: background-color 0.3s ease;
+}
+
+/* Floating Feedback Button */
+.feedback-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 22px;
+  background: #00ff41;
+  border: none;
+  outline: none;
+  padding: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 18px #00ff41;
+  z-index: 1200 !important; /* stays above but not overlapping UI */
+  transition: transform 0.2s ease;
+}
+
+.feedback-btn:hover {
+  transform: scale(1.08);
+}      
+
+.feedback-icon {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-cta:hover {
+  background-color: #00cc00;
+}
+
+/* Floating Feedback Button */
+.feedback-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #00ff00;
+  border: none;
+  color: #000;
+  font-size: 20px;
+  padding: 16px;
+  border-radius: 50%;
+  box-shadow: 0 0 18px #00ff00;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.feedback-btn:hover {
+  background-color: #00cc00;
+  box-shadow: 0 0 25px #00ff00;
+}
+
+.feedback-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* === Popup Overlay & Box === */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.popup-box {
+  background: #101418;
+  border: 1px solid #00ff00;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  border-radius: 14px;
+  padding: 24px 28px;
+  width: 100%;
+  max-width: 380px;
+  color: white;
+  position: relative;
+  animation: scaleIn 0.25s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup-title {
+  text-align: center;
+  color: #00ff00;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.popup-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #00ff00;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.popup-close:hover {
+  color: white;
+}
+
+.popup-form input,
+.popup-form textarea {
+  width: 100%;
+  background: #12181d;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.popup-form input:focus,
+.popup-form textarea:focus {
+  border-color: #00ff00;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.cancel-btn,
+.submit-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn {
+  background: #333;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background: #555;
+}
+
+.submit-btn {
+  background: #00ff00;
+  color: #000;
+}
+
+.submit-btn:hover {
+  background: #00cc00;
+}
+
+@media (max-width: 768px) {
+  .testimonial-section {
+    padding: 80px 15px 40px;
+  }
+
+  .testimonial-heading {
+    font-size: 24px;
+  }
+
+  .testimonial-card {
+    padding: 24px;
+  }
+
+  .testimonial-feedback {
+    font-size: 14px;
+  }
+
+  .testimonial-avatar {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Slick slider styles */
+.slick-dots li button:before {
+  color: #00ff00;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ffffff;
+}
